@@ -39,6 +39,11 @@ function initMap() {
 
         mapTypeId: "satellite",
         disableDefaultUI: true,
+        draggable: false,
+        scrollable: false,
+        scrollwheel: false,
+        disableDoubleClickZoom: true,
+        
         
 
 

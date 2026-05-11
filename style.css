@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-panel {
+    width: 50%;
+    padding: 30px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #feffd1;
+}
+
+.right-panel {
+    width: 50%;
+}
+
+.img {
+    display: none;
+    margin-top: 10px;
+    width: 250px;
+    height: 250px;
+
+}
+
+#image-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#status {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+#retryBtn {
+    display: none;
+}

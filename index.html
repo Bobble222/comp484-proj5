@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSUN Map Game</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- LEFT SIDE -->
+        <div class="left-panel">
+
+            <h1>
+                Map Quiz<br>
+                Click on the correct location
+            </h1>
+
+            <button id="startBtn">Start Game</button>
+
+            <button id="retryBtn">Retry</button>
+
+            <div id="status">Press Start to begin</div>
+            <section>
+                <div class="timer">00:00:00</div>
+            </section>
+            <section id="image-section">
+                <img id="A" src="images/A.jpg" class="img">
+                <img id="B" src="images/B.jpg" class="img">
+                <img id="C" src="images/C.jpg" class="img">
+                <img id="D" src="images/D.jpeg" class="img">
+                <img id="F" src="images/F.jpg" class="img">
+            </section>
+            
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="right-panel">
+            <div id="map"></div>
+        </div>
+
+    </div>
+
+    <!-- Your JS file -->
+    <script src="script.js"></script>
+
+    <!-- Google Maps API (must load AFTER script.js for callback safety) -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap"
+        async
+        defer>
+    </script>
+
+</body>
+
+</html>

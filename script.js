@@ -43,6 +43,7 @@ function initMap() {
         disableDoubleClickZoom: true,
         mapTypeControl: false,
         zoomControl: false,
+        rotateControl: false,
         fullscreenControl: false,
         streetViewControl: false,
         gestureHandling: "none",

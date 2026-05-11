@@ -50,6 +50,7 @@ function initMap() {
         gestureHandling: "none",
         tilt: 0,
         disableDefaultUI: true,
+        cameraControl: false,
 
 
         styles: [

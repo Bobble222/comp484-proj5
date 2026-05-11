@@ -34,8 +34,8 @@ function initMap() {
 
     map = new google.maps.Map(document.getElementById("map"), {
 
-        center: { lat: 34.2404, lng: -118.52742 },
-        zoom: 18,
+        center: { lat: 34.2410, lng: -118.52752 },
+        zoom: 17,
 
         mapTypeId: "satellite",
         draggable: false,
@@ -43,6 +43,10 @@ function initMap() {
         disableDoubleClickZoom: true,
         mapTypeControl: false,
         zoomControl: false,
+        fullscreenControl: false,
+        streetViewControl: false,
+        gestureHandling: "none",
+        tilt: 0,
 
 
         styles: [

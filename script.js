@@ -38,6 +38,7 @@ function initMap() {
         zoom: 16,
 
         mapTypeId: "satellite",
+        /*
         draggable: false,
         scrollwheel: false,
         disableDoubleClickZoom: true,
@@ -49,8 +50,10 @@ function initMap() {
         streetViewControl: false,
         gestureHandling: "none",
         tilt: 0,
-        disableDefaultUI: true,
         cameraControl: false,
+        */
+        disableDefaultUI: true,
+        
 
 
         styles: [

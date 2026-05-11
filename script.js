@@ -44,6 +44,7 @@ function initMap() {
         mapTypeControl: false,
         zoomControl: false,
         rotateControl: false,
+        panControl: false,
         fullscreenControl: false,
         streetViewControl: false,
         gestureHandling: "none",

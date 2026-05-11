@@ -49,6 +49,7 @@ function initMap() {
         streetViewControl: false,
         gestureHandling: "none",
         tilt: 0,
+        disableDefaultUI: true,
 
 
         styles: [

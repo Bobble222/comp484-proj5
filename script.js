@@ -30,23 +30,16 @@ let timerRunning = false;
 
 // Init map (called by Google Maps API)
 function initMap() {
-
-
     map = new google.maps.Map(document.getElementById("map"), {
 
         center: { lat: 34.2410, lng: -118.52752 },
         zoom: 17,
-
         mapTypeId: "satellite",
         disableDefaultUI: true,
         draggable: false,
         scrollable: false,
         scrollwheel: false,
         disableDoubleClickZoom: true,
-        
-        
-
-
         styles: [
             {
                 featureType: "all",
@@ -55,16 +48,12 @@ function initMap() {
             }
             ]
     });
-
     setupLocations();
     setupStartButton();
     setupRetryButton();
 }
 
-
-
-
-// 5 locations
+//define location lat/lng
 function setupLocations() {
 
     locations = [
@@ -117,22 +106,16 @@ function setupLocations() {
     ];
 }
 
-// Start button
+// Start button processes
 function setupStartButton() {
-
     document.getElementById("startBtn").addEventListener("click", () => {
-
         document.getElementById("startBtn").style.display = "none";
-
         clearRectangles();
         shuffled = shuffle([...locations]);
-
         currentIndex = 0;
         score = 100;
-
         updatePrompt();
         enableGame();
-
         startTimer();
     });
 }
@@ -148,14 +131,11 @@ function updatePrompt() {
         "Click: " + shuffled[currentIndex].name;
 }
 
-
-
+//reset location borders on game reset
 function clearRectangles() {
-
     for (let rect of rectangles) {
         rect.setMap(null);
     }
-
     rectangles = [];
 }
 
@@ -168,7 +148,6 @@ function enableGame() {
 
         const lat = event.latLng.lat();
         const lng = event.latLng.lng();
-
         const loc = shuffled[currentIndex];
 
         const correct =
@@ -176,10 +155,8 @@ function enableGame() {
             lat >= loc.bottomLat &&
             lng >= loc.leftLng &&
             lng <= loc.rightLng;
-
         const centerPoint = new google.maps.LatLng(loc.centerLat, loc.centerLng);
         
-
         if (!correct) {
             score-=5;
             currentMistakes++;
@@ -187,8 +164,7 @@ function enableGame() {
             slope = Math.atan2((event.latLng.lat()-loc.centerLat),(event.latLng.lng()-loc.centerLng));
             pair.first =  event.latLng.lat()-Math.sin(slope)*0.0003;
             pair.second = event.latLng.lng()-Math.cos(slope)*0.0003;
-
-            
+    
             const line = new google.maps.Polyline({
                 path: [event.latLng, new google.maps.LatLng(pair.first,pair.second)],
                 geodesic: true,
@@ -233,11 +209,9 @@ function enableGame() {
             rectangles.push(rect);
             wasIncremented = false;
 
-            //erase polylines
             clearPolylines();
         }
         
-
         if (currentIndex < roundsToPlay) {
             updatePrompt();
         } else {
@@ -246,11 +220,11 @@ function enableGame() {
     });
 }
 
+//removes polylines from the map
 function clearPolylines() {
   for (let i = 0; i < polylines.length; i++) {
     polylines[i].setMap(null);
   }
-
   polylines = [];
 }
 
@@ -270,10 +244,9 @@ function endGame() {
     clearInterval(interval);
 }
 
+//assigns retry button function
 function setupRetryButton() {
-
     document.getElementById("retryBtn").addEventListener("click", () => {
-
         document.getElementById("retryBtn").style.display = "none";
         
         clearRectangles();
@@ -287,15 +260,16 @@ function setupRetryButton() {
         timer = [0,0,0];
         theTimer.textContent = "00:00:00"
         startTimer();
-
         updatePrompt();
     });
 }
 
+//converts input to timer-friencly output
 function pad(unit) {
     return unit < 10 ? "0" + unit : unit;
 }
 
+//runs the timer
 function runTimer() {
     let current = `${timer[0]}:${timer[1]}:${timer[2]}`;
 
@@ -308,13 +282,13 @@ function runTimer() {
         timer[2] = 0;
         timer[1]++;
     }
-
     if (timer[1] === 60) {
         timer[1] = 0;
         timer[0]++;
     }
 }
 
+//starts the timer
 function startTimer() {
     console.log("startTimer called");
 
@@ -324,8 +298,8 @@ function startTimer() {
     }
 }
 
+//show image of grade
 function showEndImage() {
-
     const images = document.querySelectorAll(".img");
     let index;
     if (score >=90) {

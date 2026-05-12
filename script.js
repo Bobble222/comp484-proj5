@@ -40,6 +40,7 @@ function initMap() {
         scrollable: false,
         scrollwheel: false,
         disableDoubleClickZoom: true,
+        keyboardShortcuts: false,
         styles: [
             {
                 featureType: "all",

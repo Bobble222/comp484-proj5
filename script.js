@@ -167,7 +167,7 @@ function enableGame() {
     
             const line = new google.maps.Polyline({
                 path: [event.latLng, new google.maps.LatLng(pair.first,pair.second)],
-                geodesic: true,
+                geodesic: true, //relating to or denoting the shortest possible line between two points on a sphere or other curved surface.
                 strokeColor: "#00BFFF",
                 strokeOpacity: 1.0,
                 strokeWeight: 3,
